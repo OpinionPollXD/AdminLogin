@@ -1,0 +1,252 @@
+    body {
+        color: #566787;
+        background: #f5f5f5;
+        font-family: 'Varela Round', sans-serif;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        
+    }
+    #tabelForm {
+        background-color: rgba(255, 255, 255, 0.13);
+        position: relative;
+        width: 80%;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+        padding: 50px 35px; /* Set the width to 80% */
+    }
+
+    form h3 {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 42px;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        color: #ffffff;
+        letter-spacing: 0.5px;
+        outline: none;
+        border: none;
+    }
+
+    .logout-button {
+        position: absolute;
+        top: 50px;
+        right: 70px;
+    }
+
+    table {
+        background-color: rgba(255, 255, 255, 0.13);
+        border: 0px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+        border-radius: 10px;
+        /* Tilføjet border-radius for at matche formularstil */
+        margin-top: 20px;
+        /* Justeret topmargen for at matche formularstil */
+    }
+
+    
+    .table-wrapper {
+
+        
+        padding: 20px 35px;
+        /* Justeret polstring for at matche formularstil */
+        margin: 0 auto;
+
+        /* Centreret tabellen */
+        border-radius: 10px;
+        /* Tilføjet border-radius for at matche formularstil */
+
+    }
+
+    .table-title {
+        padding-bottom: 15px;
+        
+        background: rgba(255, 255, 255, 0.13);
+        color: #fff;
+        padding: 16px 35px;
+        /* Justeret polstring for at matche formularstil */
+        margin: 0 auto 20px;
+        /* Centreret titlen */
+        border-radius: 10px 10px 0 0;
+        /* Tilføjet border-radius for at matche formularstil */
+    }
+
+    .table-title h2 {
+        margin: 5px 0 0;
+        font-size: 24px;
+    }
+
+    .table-title .btn-group {
+        float: right;
+    }
+
+    .table-title .btn {
+        color: #fff;
+        float: right;
+        font-size: 13px;
+        border: none;
+        min-width: 50px;
+        border-radius: 2px;
+        border: none;
+        outline: none !important;
+        margin-left: 10px;
+    }
+
+    .table-title .btn i {
+        float: left;
+        font-size: 21px;
+        margin-right: 5px;
+    }
+
+    .table-title .btn span {
+        float: left;
+        margin-top: 2px;
+    }
+
+    table.table tr th, table.table tr td {
+        border: none;
+        padding: 15px;
+        vertical-align: middle;
+    }
+
+
+    table.table-striped tbody tr:nth-of-type(odd) {
+        background-color: #fcfcfc;
+    }
+
+    table.table-striped.table-hover tbody tr:hover {
+        background: #f5f5f5;
+    }
+
+    table.table th i {
+        font-size: 13px;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+
+    table thead th {
+        color: #dfdfdf;
+    }
+
+    table.table td a {
+        font-weight: bold;
+        color: #566787;
+        display: inline-block;
+        text-decoration: none;
+        outline: none !important;
+    }
+
+    table.table td a:hover {
+        color: #2196F3;
+    }
+
+    table.table td a.edit {
+        color: #FFC107;
+    }
+
+    table.table td a.delete {
+        color: #F44336;
+    }
+
+    table.table td i {
+        font-size: 19px;
+    }
+
+    table.table .avatar {
+        border-radius: 50%;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+    /*
+    .pagination {
+        float: right;
+        margin: 0 0 5px;
+    }
+
+    .pagination li a {
+        border: none;
+        font-size: 13px;
+        min-width: 30px;
+        min-height: 30px;
+        color: #999;
+        margin: 0 2px;
+        line-height: 30px;
+        border-radius: 2px !important;
+        text-align: center;
+        padding: 0 6px;
+    }
+
+    .pagination li a:hover {
+        color: #666;
+    }
+
+    .pagination li.active a, .pagination li.active a.page-link {
+        background: #03A9F4;
+    }
+
+    .pagination li.active a:hover {
+        background: #0397d6;
+    }
+
+    .pagination li.disabled i {
+        color: #ccc;
+    }
+
+    .pagination li i {
+        font-size: 16px;
+        padding-top: 6px
+    } */
+
+    .hint-text {
+        float: left;
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+    /* Modal styles */
+
+    .modal .modal-dialog {
+        max-width: 400px;
+    }
+    
+    .modal .modal-header, .modal .modal-body, .modal .modal-footer {
+         padding: 20px 30px;
+    }
+    
+    .modal .modal-content {
+        border-radius: 3px;
+    }
+    
+    .modal .modal-footer {
+        background: #ecf0f1;
+        border-radius: 0 0 3px 3px;
+    }
+    
+    .modal .modal-title {
+        display: inline-block;
+    }
+    
+    .modal .form-control {
+        border-radius: 2px;
+        box-shadow: none;
+        border-color: #dddddd;
+    }
+    
+    .modal textarea.form-control {
+        resize: vertical;
+    }
+    
+    .modal .btn {
+        border-radius: 2px;
+        min-width: 100px;
+    }
+    
+    .modal form label {
+        font-weight: normal;
+    }
+
