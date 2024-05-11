@@ -44,23 +44,34 @@
         border: 0px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
         border-radius: 10px;
-        /* Tilføjet border-radius for at matche formularstil */
         margin-top: 20px;
-        /* Justeret topmargen for at matche formularstil */
     }
 
     
     .table-wrapper {
-
-        
         padding: 20px 35px;
-        /* Justeret polstring for at matche formularstil */
         margin: 0 auto;
-
-        /* Centreret tabellen */
         border-radius: 10px;
-        /* Tilføjet border-radius for at matche formularstil */
+    }
 
+    #searchInput {
+        display: block;
+        height: 40px;
+        width: 80%;
+        border-radius: 3px;
+        padding: 0 10px;
+        margin-top: 8px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .row>div {
+        flex: 1;
     }
 
     .table-title {
@@ -78,7 +89,7 @@
 
     .table-title h2 {
         margin: 5px 0 0;
-        font-size: 24px;
+        font-size: 26px;
     }
 
     .table-title .btn-group {
@@ -91,10 +102,11 @@
         font-size: 13px;
         border: none;
         min-width: 50px;
-        border-radius: 2px;
+        border-radius: 5px;
         border: none;
         outline: none !important;
         margin-left: 10px;
+        margin-top: 10px;
     }
 
     .table-title .btn i {
