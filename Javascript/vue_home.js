@@ -1,19 +1,17 @@
-import Vue from "vue";
+
 const baseURL = "https://restopinionpoll.azurewebsites.net/api/Questions";
 
-
-
 Vue.createApp({
-    data() {
+    data(){
         return {
             questions: [],
             newQuestion: "",
-        };
-    },
+        }
+    }, 
     created() {
         this.getAllQuestions(baseURL);
     },
-    methods: {
+    methods: {  
         async getAllQuestions(url) {
             try {
                 const response = await axios.get(url);
@@ -26,5 +24,5 @@ Vue.createApp({
             }
 
         },
-    },
-}).mount("#app");
+    }
+}).mount("#app")

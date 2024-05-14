@@ -15,10 +15,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
-    <script src="https://unpkg.com/vue@next"></script>
+    <!-- <script src="https://unpkg.com/vue@next"></script> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="Javascript/home.js"></script>
-    <script src="/Javascript/vue_home.js"></script>
 </head>
 
 <body style="background-image: url('images/background3.jpg');">
@@ -57,14 +57,14 @@
                     </thead>
                     <tbody>
                         <tr v-for="question in questions">
-                            <td>{{question.Category}}</td>
-                            <td>{{question.QuestionText}}</td>
-                            <td>{{question.Option1}}</td>
-                            <td>{{question.Option2}}</td>
-                            <td>{{question.Option3}}</td>
-                            <td>{{question.Option1Count}}</td>
-                            <td>{{question.Option2Count}}</td>
-                            <td>{{question.Option3Count}}</td>
+                            <td>{{question.category}}</td>
+                            <td>{{question.questionText}}</td>
+                            <td>{{question.option1}}</td>
+                            <td>{{question.option2}}</td>
+                            <td>{{question.option3}}</td>
+                            <td>{{question.option1Count}}</td>
+                            <td>{{question.option2Count}}</td>
+                            <td>{{question.option3Count}}</td>
                             <td>
                                 <a href="#editQuestionModal" class="edit" data-toggle="modal"><i class="material-icons"
                                         data-toggle="tooltip" title="Edit">&#xE254;</i></a>
@@ -224,7 +224,8 @@
             }
         });
     </script>
-    <script src="/Javascript/vue_home.js"></script>
+    <script src="Javascript/vue_home.js"></script>
+    
 </body>
 
 </html>
