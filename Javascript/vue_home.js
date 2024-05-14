@@ -43,9 +43,10 @@ Vue.createApp({
             this.updateData = question;
         },
         async updateQuestion(){
-            const url = baseURL + "/" + this.updateData;
+            const url = baseURL + "/" + this.updateData.questionId;
+            console.log(this.updateData);
             try{
-                response = await axios.put(url, this.updateData)
+                const response = await axios.put(url, this.updateData)
                 this.updateMessage = " response " + response.status + " " + response.statusText
                 this.getAllQuestions(baseURL);
             }
