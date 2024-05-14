@@ -6,7 +6,9 @@ Vue.createApp({
         return {
             questions: [],
             newQuestion: { questionText: "", category: "", option1: "", option2: "", option3: "", option1Count: 0, option2Count: 0, option3Count: 0 },
-            addMessage: ""
+            addMessage: "",
+            updateData: null,
+            updateMessage: ""
 
         }
     }, 
@@ -30,6 +32,21 @@ Vue.createApp({
             try{
                 response = await axios.post(baseURL, this.newQuestion)
                 this.addMessage = " response " + response.status + " " + response.statusText
+                this.getAllQuestions(baseURL);
+            }
+            catch (error) {
+                alert(error.message);
+                console.log(error);
+            }
+        },
+        async setChosenQuestion(question){
+            this.updateData = question;
+        },
+        async updateQuestion(){
+            const url = baseURL + "/" + this.updateData;
+            try{
+                response = await axios.put(url, this.updateData)
+                this.updateMessage = " response " + response.status + " " + response.statusText
                 this.getAllQuestions(baseURL);
             }
             catch (error) {
