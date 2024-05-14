@@ -8,8 +8,8 @@
         justify-content: center;
         height: 100vh;
         margin: 0;
-        
     }
+
     #tabelForm {
         background-color: rgba(255, 255, 255, 0.13);
         position: relative;
@@ -76,15 +76,11 @@
 
     .table-title {
         padding-bottom: 15px;
-        
         background: rgba(255, 255, 255, 0.13);
         color: #fff;
         padding: 16px 35px;
-        /* Justeret polstring for at matche formularstil */
         margin: 0 auto 20px;
-        /* Centreret titlen */
         border-radius: 10px 10px 0 0;
-        /* Tilføjet border-radius for at matche formularstil */
     }
 
     .table-title h2 {
@@ -127,8 +123,12 @@
     }
 
 
-    table.table-striped tbody tr:nth-of-type(odd) {
+    table.table-striped tbody tr:nth-of-type(even) {
         background-color: #fcfcfc;
+    }
+
+    table.table-striped tbody tr:nth-of-type(odd) {
+        background-color: #ffffff;
     }
 
     table.table-striped.table-hover tbody tr:hover {
