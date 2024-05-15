@@ -8,7 +8,9 @@ Vue.createApp({
             newQuestion: { questionText: "", category: "", option1: "", option2: "", option3: "", option1Count: 0, option2Count: 0, option3Count: 0 },
             addMessage: "",
             updateData: null,
-            updateMessage: ""
+            updateMessage: "",
+            deleteMessage: "",
+            deleteId: 0
 
         }
     }, 
@@ -42,12 +44,29 @@ Vue.createApp({
         async setChosenQuestion(question){
             this.updateData = question;
         },
+        async setChosenDeleteId(deleteId){
+            this.deleteId = deleteId;
+        },
         async updateQuestion(){
             const url = baseURL + "/" + this.updateData.questionId;
             console.log(this.updateData);
             try{
                 const response = await axios.put(url, this.updateData)
                 this.updateMessage = " response " + response.status + " " + response.statusText
+                this.getAllQuestions(baseURL);
+            }
+            catch (error) {
+                alert(error.message);
+                console.log(error);
+            }
+        },
+        async deleteQuestion(deleteId){
+            this.deleteId = deleteId;
+            const url = baseURL + "/" + deleteId;
+            console.log(this.deleteId);
+            try{
+                const response = await axios.delete(url);
+                this.deleteMessage = " response " + response.status + " " + response.statusText
                 this.getAllQuestions(baseURL);
             }
             catch (error) {
