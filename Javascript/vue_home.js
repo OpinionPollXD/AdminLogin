@@ -34,7 +34,7 @@ Vue.createApp({
             try{
                 response = await axios.post(baseURL, this.newQuestion)
                 this.addMessage = " response " + response.status + " " + response.statusText
-                this.getAllQuestions(baseURL);
+                await this.getAllQuestions(baseURL);
             }
             catch (error) {
                 alert(error.message);
