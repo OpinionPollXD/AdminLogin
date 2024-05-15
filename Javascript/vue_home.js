@@ -5,6 +5,8 @@ Vue.createApp({
     data(){
         return {
             questions: [],
+            searchQuery: "",
+            filteredQuestions: [],
             newQuestion: { questionText: "", category: "", option1: "", option2: "", option3: "", option1Count: 0, option2Count: 0, option3Count: 0 },
             addMessage: ""
 
@@ -18,6 +20,7 @@ Vue.createApp({
             try {
                 const response = await axios.get(url);
                 this.questions = await response.data;
+                this.filteredQuestions = this.questions;
                 console.log(this.questions);
             }
             catch (error) {
@@ -35,6 +38,22 @@ Vue.createApp({
             catch (error) {
                 alert(error.message);
                 console.log(error);
+            }
+        },
+        async searchQuestion(event) {
+            event.preventDefault();
+        
+            try {
+                if (this.searchQuery) {
+                    this.filteredQuestions = this.questions.filter(question =>
+                        question.questionText.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+                        question.category.toLowerCase().includes(this.searchQuery.toLowerCase())
+                    );
+                } else {
+                    this.filteredQuestions = this.questions;
+                }
+            } catch (error) {
+                console.error(error);
             }
         }
     }

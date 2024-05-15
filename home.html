@@ -23,8 +23,8 @@
 
 <body style="background-image: url('images/background3.jpg');">
     <div id="app">
-        <form id="tabelForm">
-            <h3>Admin Panel</h3>
+        <div id="tabelForm">
+            <h3 style="color:white;">Admin Panel</h3>
             <button type="button" class="btn btn-primary logout-button" onclick="logout()">Log ud</button>
             <div class="table-wrapper">
                 <div class="table-title">
@@ -32,8 +32,10 @@
                         <div class="col-sm-6">
                             <h2><b>Spørgsmål</b></h2>
                         </div>
-                        <div>
-                            <input type="text" class="form-control" id="searchInput" placeholder="Search">
+                        <div class="col-sm-6">
+                            <form v-on:submit.prevent="searchQuestion">
+                                <input type="text" v-model="searchQuery" class="form-control" id="searchInput" placeholder="Skriv spørgsmål...">
+                            </form>
                         </div>
                         <div class="col-sm-6">
                             <a href="#addQuestionModal" class="btn btn-secondary" data-toggle="modal"><i
@@ -57,7 +59,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="question in questions">
+                        <tr v-for="question in filteredQuestions">
                             <td>{{question.category}}</td>
                             <td>{{question.questionText}}</td>
                             <td>{{question.option1}}</td>
@@ -73,11 +75,10 @@
                                         class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                             </td>
                         </tr>
-
                     </tbody>
                 </table>
             </div>
-        </form>
+        </div>
 
         <!-- Add Modal HTML -->
         <div id="addQuestionModal" class="modal fade">
