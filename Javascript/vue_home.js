@@ -7,7 +7,7 @@ Vue.createApp({
             questions: [],
             searchQuery: "",
             filteredQuestions: [],
-            newQuestion: { questionText: "", category: "", option1: "", option2: "", option3: "", option1Count: 0, option2Count: 0, option3Count: 0 },
+            newQuestion: { questionText: "", category: "", option1: "", option2: "", option3: "", option1Count: 0, option2Count: 0, option3Count: 0, active: 0 },
             addMessage: "",
             updateData: null,
             updateMessage: "",
