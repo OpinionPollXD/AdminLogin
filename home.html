@@ -117,8 +117,8 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                            <input v-on:click="addQuestion()" type="button" class="btn btn-success" data-dismiss="modal" value="Add">
+                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel"> 
+                             <input @click.prevent="addQuestion" type="submit" class="btn btn-success" data-dismiss="modal" value="Add">
                         </div>
                     </form>
                 </div>
@@ -161,7 +161,7 @@
                         </div>
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                            <input v-on:click="updateQuestion()" type="button" class="btn btn-info" data-dismiss="modal" value="Save">
+                            <input @click.prevent="updateQuestion()" type="submit" class="btn btn-info" data-dismiss="modal" value="Save">
                         </div>
                     </form>
                 </div>
