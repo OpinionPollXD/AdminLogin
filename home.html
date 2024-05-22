@@ -79,6 +79,11 @@
                     </tbody>
                 </table>
             </div>
+            <div class="pagination" v-if="totalPages > 1">
+                <button class="btn btn-info" @click="prevPage" :disabled="currentPage === 1">Forrige</button>
+                <span>Side {{ currentPage }} af {{ totalPages }}</span>
+                <button class="btn btn-info" @click="nextPage" :disabled="currentPage === totalPages">Næste</button>
+            </div>
         </div>
 
         <!-- Add Modal HTML -->

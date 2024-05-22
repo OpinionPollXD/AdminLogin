@@ -13,11 +13,11 @@
     }
 
     #tabelForm {
-        
         background-color: rgba(255, 255, 255, 0.13);
         position: relative;
         width: 100%;
         max-width: 1200px;
+        min-width: 1000px;
         height: auto;
         border-radius: 10px;
         backdrop-filter: blur(10px);
@@ -55,8 +55,8 @@
         margin-top: 20px;
         width: 100%;
         table-layout: fixed;
-        word-wrap: break-word;
-        
+        word-wrap: break-word;  
+        min-width: 1000px;
     }
 
     
@@ -66,8 +66,7 @@
         border-radius: 10px;
         width: 100%;
         max-width: 100%;
-        overflow: auto;
-        
+        overflow: auto;  
     }
 
     #searchInput {
@@ -218,45 +217,42 @@
         vertical-align: middle;
         margin-right: 10px;
     }
-    /*
+
+    /* Pagination */
+
     .pagination {
-        float: right;
-        margin: 0 0 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
     }
-
-    .pagination li a {
+    
+    .pagination button {
+        color: white;
+        background-color: #007bff;
         border: none;
-        font-size: 13px;
-        min-width: 30px;
-        min-height: 30px;
-        color: #999;
-        margin: 0 2px;
-        line-height: 30px;
-        border-radius: 2px !important;
-        text-align: center;
-        padding: 0 6px;
-    }
-
-    .pagination li a:hover {
-        color: #666;
-    }
-
-    .pagination li.active a, .pagination li.active a.page-link {
-        background: #03A9F4;
-    }
-
-    .pagination li.active a:hover {
-        background: #0397d6;
-    }
-
-    .pagination li.disabled i {
-        color: #ccc;
-    }
-
-    .pagination li i {
+        border-radius: 5px;
+        padding: 8px 16px;
+        margin: 0 4px;
         font-size: 16px;
-        padding-top: 6px
-    } */
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .pagination button:hover {
+        background-color: #0056b3;    
+    }
+    
+    .pagination button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+    
+    .pagination span {
+        margin: 0 10px;
+        font-size: 16px;
+        color: #fff;
+    }
 
     .hint-text {
         float: left;
