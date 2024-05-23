@@ -55,6 +55,7 @@
                             <th>Svar 1 optalt</th>
                             <th>Svar 2 optalt</th>
                             <th>Svar 3 optalt</th>
+                            <th>Total antal svar</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -69,6 +70,7 @@
                             <td>{{question.option1Count}}</td>
                             <td>{{question.option2Count}}</td>
                             <td>{{question.option3Count}}</td>
+                            <td>{{parseInt(question.option1Count) + parseInt(question.option2Count) + parseInt(question.option3Count)}}</td>
                             <td>
                                 <a v-on:click="setChosenQuestion(question)" href="#editQuestionModal" class="edit" data-toggle="modal"><i class="material-icons"
                                         data-toggle="tooltip" title="Edit">&#xE254;</i></a>
