@@ -158,6 +158,7 @@ Vue.createApp({
             if (index !== -1) {
                 this.questions.splice(index, 1, response.data);
             }
+            await this.getAllQuestions(baseURL);
         },
 
         async deleteQuestion(deleteId){
@@ -198,9 +199,7 @@ Vue.createApp({
             this.updateData = { ...question };
 
         }
-      } catch (error) {
-        console.error(error);
-      }
+
     },
-  },
+
 }).mount("#app");
