@@ -59,8 +59,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="question in paginatedQuestions">
-                            <td>{{question.active}}</td>
+                        <tr v-for="question in paginatedQuestions" :key="question.id">
+                            <td><input type="checkbox" v-model="question.active" @click="toggleActive(question)"></td>
                             <td>{{question.category}}</td>
                             <td>{{question.questionText}}</td>
                             <td>{{question.option1}}</td>
@@ -99,7 +99,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Aktiv</label>
-                                <input v-model="newQuestion.active" type="number" min="0" max="1" class="form-control" required>
+                                <input v-model="newQuestion.active" type="checkbox" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Kategori</label>
@@ -142,7 +142,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Aktiv</label>
-                                <input type="number" min="0" max="1" class="form-control" required>
+                                <input type="checkbox" v-model="updateData.active" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Kategori</label>
@@ -167,7 +167,7 @@
                         </div>
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                            <input @click.prevent="updateQuestion()" type="submit" class="btn btn-info" data-dismiss="modal" value="Save">
+                            <input @click.prevent="updateQuestion(updateData)" type="submit" class="btn btn-info" data-dismiss="modal" value="Save">
                         </div>
                     </form>
                 </div>
