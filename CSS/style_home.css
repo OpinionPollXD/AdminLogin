@@ -12,6 +12,7 @@
         box-sizing: border-box;
     }
 
+
     #tabelForm {
         
         background-color: rgba(255, 255, 255, 0.13);
@@ -29,6 +30,38 @@
         overflow: auto;
     }
 
+    #app #tabelForm h3 {
+        text-align: center;
+        color: white;  /* Eksempel: Sætter tekstfarven til hvid */
+        font-size: 2em;  /* Eksempel: Sætter skriftstørrelsen til 20px */
+        letter-spacing: 3px;
+        font-weight: 600;
+        text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5);
+        margin-right: 50px;
+    }
+
+    #app #tabelForm .logout-button {
+        background-color: rgba(255, 255, 255, 0.13);
+        box-shadow: 2px 2px 3px rgba(8, 7, 16, 0.6);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 16px;
+        margin-right: 15px;
+        margin-top: 33px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    #app #tabelForm .logout-button:hover {
+        background-color: rgba(255, 255, 255, 0.155); /* Lighter background on hover */
+        box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.608); /* Increased and lighter shadow on hover */
+    }
+
     form h3 {
         font-size: 32px;
         font-weight: 500;
@@ -41,11 +74,9 @@
         border: none;
     }
 
-    .logout-button {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-    }
+  
+
+    
 
     table {
         background-color: rgba(255, 255, 255, 0.13);
