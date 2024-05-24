@@ -70,6 +70,43 @@
         
     }
 
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+    
+        .pagination button {
+            color: white;
+            background-color: #007bff;
+            /* Bootstrap primary color */
+            border: none;
+            border-radius: 5px;
+            padding: 8px 16px;
+            margin: 0 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    
+        .pagination button:hover {
+            background-color: #0056b3;
+            /* Darker shade for hover effect */
+        }
+    
+        .pagination button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    
+        .pagination span {
+            margin: 0 10px;
+            font-size: 16px;
+            color: #fff;
+            /* Adjust if needed to match your design */
+        }
+
     #searchInput {
         display: block;
         height: 40px;

@@ -1,25 +1,49 @@
-
 const baseURL = "https://restopinionpoll.azurewebsites.net/api/Questions";
 
 Vue.createApp({
-    data(){
-        return {
-            questions: [],
-            searchQuery: "",
-            filteredQuestions: [],
-            newQuestion: { questionText: "", category: "", option1: "", option2: "", option3: "", option1Count: 0, option2Count: 0, option3Count: 0, active: false },
-            addMessage: "",
-            updateData: null,
-            updateMessage: "",
-            deleteMessage: "",
-            deleteId: 0,
-            sortAscending: true
 
-        }
-    }, 
-    created() {
-        this.getAllQuestions(baseURL);
+  data() {
+    return {
+      questions: [],
+      searchQuery: "",
+      filteredQuestions: [],
+      currentPage: 1,
+      questionsPerPage: 10,
+      newQuestion: {
+        questionText: "",
+        category: "",
+        option1: "",
+        option2: "",
+        option3: "",
+        option1Count: 0,
+        option2Count: 0,
+        option3Count: 0,
+        active: false,
+      },
+      addMessage: "",
+      updateData: null,
+      updateMessage: "",
+      deleteMessage: "",
+      deleteId: 0,
+      sortAscending: true
+    };
+  },
+
+  created() {
+    this.getAllQuestions(baseURL);
+  },
+
+  computed: {
+    paginatedQuestions() {
+      const start = (this.currentPage - 1) * this.questionsPerPage;
+      const end = start + this.questionsPerPage;
+      return this.filteredQuestions.slice(start, end);
     },
+    totalPages() {
+      return Math.ceil(this.filteredQuestions.length / this.questionsPerPage);
+    },
+  },
+
     methods: {  
         async getAllQuestions(url) {
             try {
@@ -33,6 +57,12 @@ Vue.createApp({
                 console.log(error);
             }
         },
+     nextPage() {
+          if (this.currentPage < this.totalPages) this.currentPage++;
+          },
+      prevPage() {
+        if (this.currentPage > 1) this.currentPage--;
+      },
         //  async getAllQuestions(url) {
         //      try {
         //          const response = await axios.get(url);
@@ -166,6 +196,11 @@ Vue.createApp({
         },
         updateUpdateData(question) {
             this.updateData = { ...question };
+
         }
-    }
-}).mount("#app")
+      } catch (error) {
+        console.error(error);
+      }
+    },
+  },
+}).mount("#app");

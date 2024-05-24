@@ -42,7 +42,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- table-striped -->
                 <table id="question-table"class="table table-hover table-striped">
                     <thead>
                         <tr>
@@ -60,7 +59,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="question in filteredQuestions" :key="question.id">
+                        <tr v-for="question in paginatedQuestions" :key="question.id">
                             <td><input type="checkbox" v-model="question.active" @click="toggleActive(question)"></td>
                             <td>{{question.category}}</td>
                             <td>{{question.questionText}}</td>
@@ -80,6 +79,11 @@
                         </tr>
                     </tbody>
                 </table>
+                <div class="pagination">
+                    <button class="btn btn-info" @click="prevPage" :disabled="currentPage === 1">Forrige</button>
+                    <span>Side {{ currentPage }} af {{ totalPages }}</span>
+                    <button class="btn btn-info" @click="nextPage" :disabled="currentPage === totalPages">Næste</button>
+                </div>
             </div>
         </div>
 
