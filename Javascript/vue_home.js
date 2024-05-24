@@ -176,21 +176,22 @@ Vue.createApp({
             }
         },
         async searchQuestion(event) {
-            event.preventDefault();
-        
-            try {
-                if (this.searchQuery) {
-                    this.filteredQuestions = this.questions.filter(question =>
-                        question.questionText.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-                        question.category.toLowerCase().includes(this.searchQuery.toLowerCase())
-                    );
-                } else {
-                    this.filteredQuestions = this.questions;
-                }
-            } catch (error) {
-                console.error(error);
-            }
-        },
+          event.preventDefault();
+      
+          try {
+              if (this.searchQuery) {
+                  this.filteredQuestions = this.questions.filter(question =>
+                      question.questionText.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+                      question.category.toLowerCase().includes(this.searchQuery.toLowerCase())
+                  );
+              } else {
+                  this.filteredQuestions = [...this.questions]; // de tre prikker er en spread operator, der kopierer arrayet
+              }
+              this.currentPage = 1;  // Reset til side 1 efter søgning
+          } catch (error) {
+              console.error(error);
+          }
+      },
         toggleActive(question) {
             question.active = !question.active;
             this.updateQuestion(question);
