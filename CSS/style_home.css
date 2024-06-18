@@ -19,6 +19,7 @@
         position: relative;
         width: 100%;
         max-width: 1200px;
+        min-width: 1200px;
         height: auto;
         border-radius: 10px;
         backdrop-filter: blur(10px);
@@ -87,6 +88,7 @@
         width: 100%;
         table-layout: fixed;
         word-wrap: break-word;
+        min-width: 100%;
         
     }
 
